@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+typedef long long ll;
+ll aa(ll n)
+{
+    ll S[n]={};
+    S[0]=1;
+    for (ll i=1;i<=n;i++)
+        {
+            if (i%2==1 )    
+                S[i]=(S[i-1]*4)%9901;
+            else
+                S[i]=S[i-1];
+            //cout<<S[i]<<" ";
+        }
+    return S[n];
+}
+int main() {
+    ll n=1000;
+    cout<<"b1000 mod 9901 = "<<aa(n)<<endl;
+    return 0;
+}
